@@ -1,0 +1,46 @@
+<div class="card-container" appBorderColor [date]="item.snippet.publishedAt">
+  <div class="card-info">
+    <img
+      class="card-thumbnail"
+      [src]="item.snippet.thumbnails.medium.url"
+      alt="Video thumbnail"
+    />
+    <div class="card-counts">
+      <div class="card-count">
+        <img
+          src="../../../../../assets/img/card/viewed.svg"
+          alt="viewed icon"
+        />
+        <span>{{ item.statistics.viewCount }}</span>
+      </div>
+      <div class="card-count">
+        <img src="../../../../../assets/img/card/liked.svg" alt="like icon" />
+        <span>{{ item.statistics.likeCount }}</span>
+      </div>
+      <div class="card-count">
+        <img
+          src="../../../../../assets/img/card/dislike.svg"
+          alt="dislike icon"
+        />
+        <span>{{ item.statistics.dislikeCount }}</span>
+      </div>
+      <div class="card-count">
+        <span class="card-comment-icon">
+          <img
+            class="top"
+            src="../../../../../assets/img/card/square.svg"
+            alt="comment icon"
+          />
+          <img
+            class="bottom"
+            src="../../../../../assets/img/card/square.svg"
+            alt="comment icon"
+          />
+        </span>
+        <span>{{ item.statistics.commentCount }}</span>
+      </div>
+    </div>
+    <h3>{{ item.snippet.title }}</h3>
+  </div>
+  <button mat-raised-button color="primary">more...</button>
+</div>

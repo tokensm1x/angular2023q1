@@ -1,0 +1,15 @@
+:host {
+  margin-left: 5px;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  mat-icon {
+    height: 15px;
+    width: 15px;
+    font-size: 15px;
+  }
+}

@@ -1,1 +1,52 @@
-
+<header>
+  <div class="search-container">
+    <div class="empty"></div>
+    <div class="header-search-panel">
+      <img src="../../../../assets/img/header/logo.svg" alt="Youtube logo" />
+      <div class="header-search">
+        <input type="text" placeholder="Search" [(ngModel)]="filterBy" />
+        <button mat-raised-button color="primary" (click)="searchItems()">
+          search
+        </button>
+      </div>
+      <div
+        class="header-settings"
+        (click)="isFiltersEnabled = !isFiltersEnabled"
+      >
+        <img
+          src="../../../../assets/img/header/settings.svg"
+          alt="Settings button"
+        />
+      </div>
+    </div>
+    <div class="header-user">
+      <div class="header-login-info">
+        <div>Your name</div>
+        <img src="../../../../assets/img/header/login.svg" alt="User icon" />
+      </div>
+    </div>
+  </div>
+  <div class="filters-container" *ngIf="isFiltersEnabled">
+    <div class="filters-items">
+      <span class="filters-title">Sorting by:</span>
+      <span class="filters-date" (click)="sortItems(sortDate)"
+        ><span class="text">date</span>
+        <app-sort-arrows
+          [direction]="
+            searchReq.orderBy.value === sortDate ? searchReq.orderBy.dir : ''
+          "
+        ></app-sort-arrows>
+      </span>
+      <span class="filters-count" (click)="sortItems(sortCount)"
+        ><span class="text">count of views</span>
+        <app-sort-arrows
+          [direction]="
+            searchReq.orderBy.value === sortCount ? searchReq.orderBy.dir : ''
+          "
+        ></app-sort-arrows
+      ></span>
+      <span class="filters-word">by word or sentence</span>
+      <input type="text" [(ngModel)]="searchReq.tags" (input)="searchItems()" />
+    </div>
+  </div>
+</header>
