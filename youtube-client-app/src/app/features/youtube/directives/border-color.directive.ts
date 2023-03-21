@@ -10,6 +10,7 @@ export class BorderColorDirective implements OnInit {
   @Input('date') date: string = '';
 
   constructor(private elementRef: ElementRef, private render: Renderer2) {}
+
   ngOnInit(): void {
     this.changeBorderColor();
   }
@@ -29,12 +30,12 @@ export class BorderColorDirective implements OnInit {
     this.render.setStyle(
       this.elementRef.nativeElement,
       'borderBottomColor',
-      color
+      color,
     );
     this.render.setStyle(
       this.elementRef.nativeElement,
       'borderBottomStyle',
-      'solid'
+      'solid',
     );
   }
 }

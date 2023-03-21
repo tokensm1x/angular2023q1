@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SearchItemModel } from 'src/app/core/models/search-item.model';
 
 @Component({
@@ -6,10 +6,6 @@ import { SearchItemModel } from 'src/app/core/models/search-item.model';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input('item') item: SearchItemModel = {} as SearchItemModel;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

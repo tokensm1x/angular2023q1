@@ -10,6 +10,7 @@ export class SearchService {
   data: SearchResultModel = require('../data/data.json');
 
   $searchData = new BehaviorSubject<SearchResultModel>({} as SearchResultModel);
+
   $searchValue = new BehaviorSubject<SearchModel>({} as SearchModel);
 
   getResult(filterBy: string): Observable<SearchResultModel> {
@@ -22,7 +23,7 @@ export class SearchService {
             .includes(filterBy.toLocaleLowerCase());
         });
         return newRes;
-      })
+      }),
     );
   }
 }

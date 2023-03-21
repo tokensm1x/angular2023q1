@@ -43,8 +43,8 @@ export class HeaderComponent {
       !dir || orderBy !== this.searchReq.orderBy.value
         ? 'asc'
         : dir === 'asc'
-        ? 'desc'
-        : '';
+          ? 'desc'
+          : '';
     this.searchReq.orderBy.value = orderBy;
     this.searchItems();
   }
