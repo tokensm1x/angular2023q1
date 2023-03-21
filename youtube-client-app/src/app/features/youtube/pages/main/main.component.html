@@ -1,1 +1,4 @@
-
+<div class="results-container">
+  <app-card *ngFor="let card of items | filterItems : search" [item]="card">
+  </app-card>
+</div>
