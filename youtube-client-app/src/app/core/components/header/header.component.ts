@@ -39,8 +39,13 @@ export class HeaderComponent {
 
   sortItems(orderBy: string): void {
     const dir = this.searchReq.orderBy.dir;
+    this.searchReq.orderBy.dir =
+      !dir || orderBy !== this.searchReq.orderBy.value
+        ? 'asc'
+        : dir === 'asc'
+        ? 'desc'
+        : '';
     this.searchReq.orderBy.value = orderBy;
-    this.searchReq.orderBy.dir = !dir ? 'asc' : dir === 'asc' ? 'desc' : '';
     this.searchItems();
   }
 }
